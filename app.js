@@ -5,7 +5,7 @@ const { createServer } = require("http");
 
 const httpServer = createServer();
 const io = new Server(httpServer, {
-  cors: { origin: "https://cityfix.onrender.com" },
+  cors: { origin: "https://sample-socket.onrender.com" },
 });
 
 // Define a route for your main application (optional)
