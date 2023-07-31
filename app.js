@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const { Server } = require("socket.io");
 const { createServer } = require("http");
@@ -9,6 +10,7 @@ const io = new Server(httpServer, {
   cors: { origin: "https://sample-socket.onrender.com" },
 });
 
+app.use(cors());
 // Define a route for your main application (optional)
 app.get("/", (req, res) => {
   res.send("Hello, this is your Express app!");
